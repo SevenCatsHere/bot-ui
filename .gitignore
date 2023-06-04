@@ -89,5 +89,5 @@ typings/
 out/
 
 # Project specific
-/config
+/dist
 /.db

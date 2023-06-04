@@ -7,7 +7,7 @@ const MiniCssExtract = require('mini-css-extract-plugin');
 const Brotli = require('brotli-webpack-plugin');
 
 const base = {
-  context: path.resolve('src'),
+  context: path.resolve('./src'),
   entry: [
     '@fontsource/roboto/300.css',
     '@fontsource/roboto/400.css',
@@ -15,6 +15,9 @@ const base = {
     '@fontsource/roboto/700.css',
     './index.tsx',
   ],
+  output: {
+    publicPath: '/',
+  },
   resolve: {
     extensions: ['.tsx', '.ts', '.jsx', '.js', '.json', '.wasm'],
   },
@@ -52,7 +55,7 @@ const base = {
   },
   plugins: [
     new Html({
-      template: path.resolve('src/template.html'),
+      template: path.resolve('./src/template.html'),
       inject: 'head',
     }),
     new MiniCssExtract(),
@@ -69,7 +72,6 @@ const environments = {
         {
           context: [
             '/api',
-            '/graphql',
           ],
           target: 'http://localhost:3000',
         },
