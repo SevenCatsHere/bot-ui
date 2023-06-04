@@ -24,10 +24,7 @@ module.exports = {
     },
     {
       files: ['**/*.js'],
-      extends: [
-        'airbnb',
-        'next',
-      ],
+      extends: ['airbnb'],
       parserOptions: {
         sourceType: 'script',
       },
