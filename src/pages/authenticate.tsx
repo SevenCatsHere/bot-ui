@@ -1,8 +1,8 @@
 import React, { useEffect, useState, FC } from 'react';
-import { CircularProgress, Backdrop } from '@mui/material';
 import { useParams, useNavigate } from 'react-router-dom';
 import { enqueueSnackbar } from 'notistack';
 import redoseClient from '../redose-client';
+import PageLoading from '../components/page-loading';
 
 const AuthenticatePage: FC = function AuthenticatePage() {
   const [isLoading, setIsLoading] = useState(true);
@@ -33,16 +33,7 @@ const AuthenticatePage: FC = function AuthenticatePage() {
   }, [sessionId]);
 
   return (
-    <Backdrop
-      open={isLoading}
-      sx={{
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-      }}
-    >
-      <CircularProgress color="primary" />
-    </Backdrop>
+    <PageLoading isOpen={isLoading} />
   );
 };
 

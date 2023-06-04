@@ -8,7 +8,7 @@ const RedoseClientInterceptors: FC = function RedoseClientInterceptors() {
 
   useEffect(() => {
     const resInterceptorId = redoseClient.interceptors.response.use(
-      (res) => res.data,
+      (res) => res,
       (ex: AxiosError) => {
         if (ex.isAxiosError) {
           if (ex.response?.status === 301) navigate('/unauthenticated');

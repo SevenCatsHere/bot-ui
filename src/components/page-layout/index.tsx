@@ -6,12 +6,11 @@ import {
   Toolbar,
   Avatar,
   List,
-  ListItem,
-  ListItemText,
   Menu,
   Typography,
 } from '@mui/material';
 import { Link } from 'react-router-dom';
+import ListItem from './list-item';
 import MenuItem from './menu-item';
 
 interface Props {
@@ -49,20 +48,15 @@ const PageLayout: FC<Props> = function PageLayout({ children }) {
           </Typography>
 
           <Box flexGrow={1}>
-            <List>
-              <ListItem>
-                <Typography
-                  component={Link}
-                  to="/"
-                  color="inherit"
-                  sx={{
-                    mr: 1,
-                    textDecoration: 'none',
-                  }}
-                >
-                  <ListItemText color="inherit">Home</ListItemText>
-                </Typography>
-              </ListItem>
+            <List
+              sx={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'flex-start',
+              }}
+            >
+              <ListItem to="/">Home</ListItem>
+              <ListItem to="/guild">Guild</ListItem>
             </List>
           </Box>
 
