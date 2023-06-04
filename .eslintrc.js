@@ -20,6 +20,7 @@ module.exports = {
         'react/jsx-props-no-spreading': 0,
         'react/jsx-no-bind': 0,
         'react-hooks/exhaustive-deps': 0,
+        'no-useless-computed-key': 0,
       },
     },
     {
